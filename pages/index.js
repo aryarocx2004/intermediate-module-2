@@ -55,21 +55,21 @@ export default function HomePage() {
 
   const getBalance = async() => {
     if (atm) {
-      setBalance((await atm.getBalance()).toNumber());
+      setBalance((await atm.getExp()).toNumber());
     }
   }
 
-  const deposit = async() => {
+  const pressAttackButton = async() => {
     if (atm) {
-      let tx = await atm.deposit(1);
+      let tx = await atm.pressAttackButton();
       await tx.wait()
       getBalance();
     }
   }
 
-  const withdraw = async() => {
+  const pressDefendButton = async() => {
     if (atm) {
-      let tx = await atm.withdraw(1);
+      let tx = await atm.pressDefendButton();
       await tx.wait()
       getBalance();
     }
@@ -78,7 +78,7 @@ export default function HomePage() {
   const initUser = () => {
     // Check to see if user has Metamask
     if (!ethWallet) {
-      return <p>Please install Metamask in order to use this ATM.</p>
+      return <p>Please install Metamask in order to Fight.</p>
     }
 
     // Check to see if user is connected. If not, connect to their account
@@ -93,9 +93,9 @@ export default function HomePage() {
     return (
       <div>
         <p>Your Account: {account}</p>
-        <p>Your Balance: {balance}</p>
-        <button onClick={deposit}>Deposit 1 ETH</button>
-        <button onClick={withdraw}>Withdraw 1 ETH</button>
+        <p>Your Figth EXP: {balance}</p>
+        <button onClick={pressAttackButton}>Attack(+5000)</button>
+        <button onClick={pressDefendButton}>Defend(-2500)</button>
       </div>
     )
   }
@@ -104,7 +104,7 @@ export default function HomePage() {
 
   return (
     <main className="container">
-      <header><h1>Welcome to the Metacrafters ATM!</h1></header>
+      <header><h1>Welcome to the The Battle of Wudan!</h1></header>
       {initUser()}
       <style jsx>{`
         .container {
