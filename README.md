@@ -1,4 +1,12 @@
-# Starter Next/Hardhat Project
+# The Battle Of Wudan
+
+A sample webpage demonstarting the Attack/Defend functions.
+
+## Description
+
+This is a simple implementation of attack and defend functions which increases Exp by +5000 and decreases ny -2500 upon pressing the Attack and Defend buttons respectively on the front-end.
+
+## Executing the Code
 
 After cloning the github, you will want to do the following to get the code running on your computer.
 
@@ -10,3 +18,13 @@ After cloning the github, you will want to do the following to get the code runn
 
 After this, the project will be running on your localhost. 
 Typically at http://localhost:3000/
+
+## Authors
+
+Arya PG
+
+aryapg2004@gmail.com
+
+## License
+
+This project license is MIT.
